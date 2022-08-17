@@ -12,7 +12,7 @@ ExternalProject_add(
     boost
     URL https://boostorg.jfrog.io/artifactory/main/release/1.80.0/source/boost_1_80_0.tar.gz
     PREFIX boost
-    CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.sh --prefix=${CMAKE_INSTALL_PREFIX} --with-libraries=context,filesystem,program_options,regex,system,thread
+    CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.sh --prefix=${CMAKE_INSTALL_PREFIX} --with-libraries=context,filesystem,iostreams,program_options,regex,system,thread
     BUILD_COMMAND <SOURCE_DIR>/b2
     BUILD_IN_SOURCE TRUE
     INSTALL_COMMAND <SOURCE_DIR>/b2 install

@@ -9,6 +9,7 @@ list(APPEND CMAKE_ARGS
     "-DCMAKE_BUILD_TYPE=Release"
     "-DBUILD_SHARED_LIBS=OFF"
     "-DWITH_GTEST=OFF"
+    "-DBUILD_TESTING=OFF"
     )
 
 message(STATUS "Preparing external project \"glog\" with args:")

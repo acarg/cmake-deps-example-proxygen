@@ -25,7 +25,11 @@ jobs:
         with:
           path: ./install
           key: ${{ github.job }}-${{ hashFiles('./dependencies/**') }}
-      - name: Configure
-        run: cmake -DCMAKE_PREFIX_PATH=${GITHUB_WORKSPACE}/install -DCMAKE_INSTALL_PREFIX=install -Bbuild -Sdependencies
-      - name: Build
+      - name: Configure dependencies
+        run: cmake -DCMAKE_PREFIX_PATH=${GITHUB_WORKSPACE}/install -DCMAKE_INSTALL_PREFIX=install -Bdependencies/build -Sdependencies
+      - name: Build dependencies
+        run: cmake --build dependencies/build
+      - name: Configure project
+        run: cmake -DCMAKE_PREFIX_PATH=${GITHUB_WORKSPACE}/install -Bbuild -S.
+      - name: Build project
         run: cmake --build build

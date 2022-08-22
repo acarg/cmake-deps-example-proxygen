@@ -6,4 +6,18 @@ project(cmake-deps-example)
 
 add_definitions("-Wall -Wextra -Werror ")
 
-add_executable(example main.cpp)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
+
+find_package(gflags REQUIRED)
+find_package(zstd REQUIRED)
+find_package(Proxygen REQUIRED)
+
+add_executable(echo_server
+    src/EchoServer.cpp
+    src/EchoHandler.cpp
+    )
+
+target_link_libraries(echo_server
+    proxygen::proxygen
+    proxygen::proxygenhttpserver
+    )

@@ -9,6 +9,7 @@ add_definitions("-Wall -Wextra -Werror ")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
 
 find_package(gflags REQUIRED)
+find_package(zstd REQUIRED)
 find_package(Proxygen REQUIRED)
 
 add_executable(echo_server

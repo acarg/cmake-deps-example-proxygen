@@ -2,6 +2,7 @@
 
 # cmake-deps-example-proxygen
 An example showing how to handle dependencies with CMake, here using Proxygen.
+It goes with [this blog post](https://www.acarg.ch/posts/cmake-deps/).
 
 > Warning: This is not trying to do anything useful with Proxygen! I just
 chose it as an example because it is not trivial to build its dependencies.
@@ -13,11 +14,10 @@ This project depends on Proxygen, which has a few dependencies (listed
 
 ### With a package manager
 
-I wanted to show a "simple build" with a package manager, using Pacman
-from ArchLinux. Proxygen is not in the default repo, but it is in the AUR.
-That means that it could be installed e.g. using `yay`.
+It turns out that Proxygen is available in the Arch AUR repo.
+That means that it can be installed e.g. using `yay`.
 
-It should have been like this:
+It can be done like this:
 
 1. Install the dependencies:
 
@@ -32,13 +32,9 @@ It should have been like this:
     cmake --build build
     ```
 
-However, those packages are not super up-to-date on the AUR and fail to
-build (at least `folly` and `wangle` fail, that's where I gave up). So
-I failed installing Proxygen from there.
-
-Which makes a point: if you decide to depend on a package manager, then...
-you depend on it. In this case the user-maintained packages showed their
-limits.
+The limitation here is that your package manager may not have Proxygen.
+For instance, it was outdated when I first tried it, and therefore
+unavailable.
 
 ### With the helper script
 

@@ -1,7 +1,7 @@
-[![Build](https://github.com/acarg/cmake-deps-example/actions/workflows/main.yml/badge.svg)](https://github.com/acarg/cmake-deps-example/actions/workflows/main.yml)
+[![Build](https://github.com/acarg/cmake-deps-example-proxygen/actions/workflows/main.yml/badge.svg)](https://github.com/acarg/cmake-deps-example-proxygen/actions/workflows/main.yml)
 
-# cmake-deps-example
-An example showing how to handle dependencies with CMake.
+# cmake-deps-example-proxygen
+An example showing how to handle dependencies with CMake, here using Proxygen.
 
 > Warning: This is not trying to do anything useful with Proxygen! I just
 chose it as an example because it is not trivial to build its dependencies.
